@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kwaktoon/screens/home_screen.dart';
 
 void main() {
   runApp(App());
@@ -22,29 +23,14 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            color: Colors.red,
+          backgroundColor: const Color(0xFFE7626C),
+          textTheme: const TextTheme(
+            headline1: TextStyle(
+              color: Color(0xFF232B55),
+            ),
           ),
-        ),
-      ),
-      home: Scaffold(
-        backgroundColor: const Color(0xFFF4EDDB),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              showTitle ? const MyLargeTitle() : const Text('nothing'),
-              IconButton(
-                onPressed: toggleTitle,
-                icon: const Icon(
-                  Icons.remove_red_eye,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+          cardColor: const Color(0xFFF4EDDB)),
+      home: const HomeScreen(),
     );
   }
 }
